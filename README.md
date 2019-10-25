@@ -5,10 +5,55 @@
 
 Everything your TypeScript project needs. This library is a collection of helpful methods I came up with while developing software using TypeScript.
 
-## isNil
+## Variable Checks
+
+- ### isNil (`<T>(a: T | null | undefined): a is null | undefined`)
 
 Checks whether a variable is `null` or `undefined` and returns `true`. This method is also making use of the TypeScript type guard to ensure type safety for the current scope.
 
-## isAssigned
+- ### isAssigned (`<T>(a: T): a is T`)
 
-It's the inversion of `isNil` and returns `true` if the given variable has any value assigned. (Also use of Type Guard here)
+It's the inversion of `isNil` and returns `true` if the given variable has any value assigned. This function also makes use of TypeScript type guards.
+
+## Typings
+- #### `type OptionalRecord<K extends string | number, T>`
+
+A type for correctly typing a list with a value of `T` and `undefined`. This type should avoid write the following:
+
+```typescript
+// The old way
+const a: Record<string, number | undefined> = { a: 5, b: undefined };
+
+// Instead it's now
+const b: OptionalRecord<string, number> = { a: 5, b: undefined };
+```
+
+## String utility methods
+
+- ### isStringEmpty (`<T extends string>(a: T): a is T`)
+
+This function is a convenience method for checking whether a string is empty or has some value.
+
+It returns `true` for `""` otherwise `false`
+
+- ### isTrimmedStringEmpty (`<T extends string>(a: T): a is T`)
+
+Is another convenience method, that checks whether or not a string is empty, after running the `trim()` function on it.
+
+## Math Functions
+
+- ### add (`a: number, b: number`)
+
+This function adds a to b. E.g. `add(1, 1) // => 2`. Simple addition we know from school.
+
+- ### sub (`a: number, b: number`)
+
+This function subtracts b from a. E.g. `sub(1, 2) // => -1`. Simple subtraction we know from school.
+
+# License
+
+This library is licensed under the MIT license.
+
+# Contribute
+
+Feels free to submit your PR. I'd be more than glad if you extend this neat library of useful utility methods.

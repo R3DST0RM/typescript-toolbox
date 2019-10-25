@@ -14,7 +14,7 @@ describe("isNil", () => {
         expect(isNil(variableNumber)).toBe(false);
         expect(isNil(variableString)).toBe(false);
     });
-})
+});
 
 describe("isAssigned", () => {
     it("returns true if variable is defined", () => {
