@@ -11,7 +11,7 @@ Everything your TypeScript project needs. This library is a collection of helpfu
 
 Checks whether a variable is `null` or `undefined` and returns `true`. This method is also making use of the TypeScript type guard to ensure type safety for the current scope.
 
-- ### isAssigned (`<T>(a: T): a is T`)
+- ### isAssigned (`<T>(a: T | null | undefined): a is T`)
 
 It's the inversion of `isNil` and returns `true` if the given variable has any value assigned. This function also makes use of TypeScript type guards.
 
@@ -49,6 +49,20 @@ This function adds a to b. E.g. `add(1, 1) // => 2`. Simple addition we know fro
 - ### sub (`a: number, b: number`)
 
 This function subtracts b from a. E.g. `sub(1, 2) // => -1`. Simple subtraction we know from school.
+
+## Async Functions
+
+- ### waitFor (`<T>(validatorInput: T, validatorFn: ValidatorFunction<T>, waitOptions: WaitOptions)`)
+
+This function waits until the validator function returns `true` or until the timeout is reached (default timeout: 5 seconds).
+Example usage:
+
+```typescript
+const asyncFn = async () => {
+    await waitFor(doSomeCalculation(), resultOfdoSomeCalculation => resultOfdoSomeCalculation === 5);
+    // code which get's executed as soon as resultOfdoSomeCalculation is equal to 5 otherwise the Promise will get rejected after 5 seconds
+}
+```
 
 # License
 

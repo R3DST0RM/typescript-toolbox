@@ -18,4 +18,4 @@ export const isNil = <T>(a: T | null | undefined): a is null | undefined => a ==
  * isAssigned<string>("") // returns true
  * @param a - Generic type <T>
  */
-export const isAssigned = <T>(a: T): a is T => !isNil(a);
+export const isAssigned = <T>(a: T | null | undefined): a is T => !isNil(a);
