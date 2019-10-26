@@ -6,8 +6,9 @@ interface WaitOptions {
 
 const DEFAULT_TIMEOUT = 5000;
 const DEFAULT_INTERVAL = 100;
+const DEFAULT_WAIT_OPTIONS: WaitOptions = { timeout: DEFAULT_TIMEOUT, interval: DEFAULT_INTERVAL };
 
-export const waitFor = <T>(validatorInput: T, validatorFn: ValidatorFunction<T>, waitOptions: WaitOptions) => {
+export const waitFor = <T>(validatorInput: T, validatorFn: ValidatorFunction<T>, waitOptions: WaitOptions = DEFAULT_WAIT_OPTIONS) => {
     const timeout = waitOptions.timeout || DEFAULT_TIMEOUT;
     const interval = waitOptions.interval || DEFAULT_INTERVAL;
     let numberOfRetries = timeout / interval;
