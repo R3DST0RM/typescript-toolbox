@@ -5,6 +5,14 @@
 
 Everything your TypeScript project needs. This library is a collection of helpful methods I came up with while developing software using TypeScript.
 
+## Object utils
+
+- ### merge (`<T extends object, U extends object>(base: T, toMerge: U): _InternalCombinedType<T, U>`)
+
+Merges two objects together and returns a concatenated version.
+
+_If a property is in both object the latter version will win. Means, that `base` value will be overridden by `toMerge` object_
+
 ## Variable Checks
 
 - ### isNil (`<T>(a: T | null | undefined): a is null | undefined`)
@@ -49,6 +57,10 @@ This function adds a to b. E.g. `add(1, 1) // => 2`. Simple addition we know fro
 - ### sub (`a: number, b: number`)
 
 This function subtracts b from a. E.g. `sub(1, 2) // => -1`. Simple subtraction we know from school.
+
+- ### identity `<T>(x: T): T`
+
+Returns the same value that was used as it's argument.
 
 ## Async Functions
 
