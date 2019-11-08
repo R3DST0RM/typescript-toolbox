@@ -3,6 +3,14 @@ export const isTrimmedStringEmpty = <T extends string>(a: T): a is T => isString
 export const isStringEmpty = <T extends string>(a: T): a is T => isNil(a) || a.length === 0;
 
 /**
+ * Checks if a variable is a string and not null or undefined
+ * @param a - Generic type <T>
+ */
+export function isString<T>(a: T | unknown | null | undefined): a is string {
+    return isAssigned<typeof a>(a) && typeof a === "string";
+}
+
+/**
  * Checks if variable `a` isNil.
  * @example
  * isNil<string>(null) // returns true

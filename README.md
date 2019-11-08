@@ -23,6 +23,10 @@ Checks whether a variable is `null` or `undefined` and returns `true`. This meth
 
 It's the inversion of `isNil` and returns `true` if the given variable has any value assigned. This function also makes use of TypeScript type guards.
 
+- ### isString (`<T>(a: T | unknown | null | undefined): a is string`)
+
+Checks a given parameter if it is a string and returns a type guard ensuring, that it's either a string or not.
+
 ## Typings
 - #### `type OptionalRecord<K extends string | number, T>`
 

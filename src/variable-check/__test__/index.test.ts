@@ -1,4 +1,4 @@
-import { isAssigned, isNil, isStringEmpty, isTrimmedStringEmpty } from "../index";
+import { isAssigned, isNil, isString, isStringEmpty, isTrimmedStringEmpty } from "../index";
 
 describe("isNil", () => {
     it("returns true if variable is undefined", () => {
@@ -53,5 +53,25 @@ describe("isStringEmpty", () => {
         expect(isStringEmpty(whitespaceString)).toBe(false);
         expect(isStringEmpty(emptyString)).toBe(true);
         expect(isStringEmpty(nonEmptyString)).toBe(false);
+    });
+});
+
+describe("isString", () => {
+    it.each`
+        values          | result
+        ${false}        | ${false}
+        ${true}         | ${false}
+        ${undefined}    | ${false}
+        ${1}            | ${false}
+        ${() => {
+    /* void */
+}} | ${false}
+        ${{ a: "123" }} | ${false}
+        ${[]}           | ${false}
+        ${["abc"]}      | ${false}
+        ${"hello"}      | ${true}
+        ${""}           | ${true}
+    `("returns $result when $values are used", ({ values, result }) => {
+        expect(isString(values)).toEqual(result);
     });
 });

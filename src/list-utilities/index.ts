@@ -10,4 +10,4 @@ type _InternalCombinedType<T, U> = T & U;
  */
 export const merge = <T extends object, U extends object>(base: T, toMerge: U): _InternalCombinedType<T, U> => {
     return { ...base, ...toMerge };
-}
+};
