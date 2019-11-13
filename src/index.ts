@@ -1,4 +1,4 @@
-import { merge, OptionalRecord } from "./list-utilities";
+import { merge, mergeArray, mergeSet, OptionalRecord } from "./list-utilities";
 import { add, identity, sub } from "./math-functions";
 import { waitFor } from "./timeout-utils/waitFor";
 import { isAssigned, isNil, isString, isStringEmpty, isTrimmedStringEmpty } from "./variable-check";
@@ -15,4 +15,6 @@ export {
     sub,
     waitFor,
     merge,
+    mergeArray,
+    mergeSet,
 };

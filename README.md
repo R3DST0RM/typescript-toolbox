@@ -5,6 +5,18 @@
 
 Everything your TypeScript project needs. This library is a collection of helpful methods I came up with while developing software using TypeScript.
 
+## Array utils
+
+- ### mergeArray (`<T extends any[], U extends any[]>(base: T, toMerge: U): _InternalCombinedType<T[], U[]>`)
+
+Merges two arrays together and returns a concatenated version.
+
+Hint: Merging two arrays does NOT remove duplicate values, use `mergeSet` instead.
+
+- ### mergeSet (`<T extends any[], U extends any[]>(base: T, toMerge: U)`)
+
+Merges two arrays together and returns a concatenated version. It also removes duplicate values.
+
 ## Object utils
 
 - ### merge (`<T extends object, U extends object>(base: T, toMerge: U): _InternalCombinedType<T, U>`)
