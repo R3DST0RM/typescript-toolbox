@@ -8,6 +8,20 @@ const DEFAULT_TIMEOUT = 5000;
 const DEFAULT_INTERVAL = 100;
 const DEFAULT_WAIT_OPTIONS: WaitOptions = { timeout: DEFAULT_TIMEOUT, interval: DEFAULT_INTERVAL };
 
+/**
+ * This function waits for the `validatorFn` parameter to return true.
+ * If the validator function returns true, the created promise will be resolved.
+ * Otherwise the promise will be rejected.
+ *
+ * @example
+ * import { mount } from "enzyme";
+ *
+ * const wrapper = mount(<SomeReactComponent />);
+ * await waitFor(wrapper, wrapper => wrapper.find(SomeReactComponentChild).length === 2);
+ * @param validatorInput - Input value for the validator function
+ * @param validatorFn - A validator function which should resolve to true if code shall be continued.
+ * @param waitOptions - Wait options like, timeout and interval.
+ */
 export const waitFor = <T>(
     validatorInput: T,
     validatorFn: ValidatorFunction<T>,
