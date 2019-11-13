@@ -1,16 +1,12 @@
-import {waitFor} from "../../index";
+import {waitFor} from "../waitFor";
 
 describe("waitFor function", () => {
     it("successfully executes validator function and return.", done => {
-        const doSomeCalculation = (n: number): number => {
-            if (n === 0) return 1;
-
-            return n * doSomeCalculation(n - 1);
-        };
+        const doSomeCalculation = (n: number): number => (n === 0 ? 1 : n * doSomeCalculation(n - 1));
 
         waitFor(doSomeCalculation(10), result => {
             done();
-            return result != 0;
-        })
+            return result !== 0;
+        });
     });
 });
