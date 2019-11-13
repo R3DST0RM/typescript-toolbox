@@ -17,4 +17,12 @@ describe("waitFor function", () => {
             })
             .catch(() => done());
     });
+
+    it("is possible to provide empty object as wait options. Default values will be used instead", done => {
+        waitFor(null, () => true, {
+            /* Left empty on purpose */
+        })
+            .then(() => done())
+            .catch(() => done());
+    });
 });
