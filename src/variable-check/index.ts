@@ -38,3 +38,19 @@ export const isNil = <T>(a: T | null | undefined): a is null | undefined => a ==
  * @param a - Generic type <T>
  */
 export const isAssigned = <T>(a: T | null | undefined): a is T => !isNil(a);
+
+/**
+ * Execute the predicate function and return its value if and only if the variable is assigned.
+ * @example
+ * const a = 1;
+ * const b = ifDefined(a, a => a * 2, 0); // b => 2
+ *
+ * const c = undefined;
+ * const d = ifDefined(c, c => "hello", "world"); // d => world
+ * @param variable
+ * @param predicate
+ * @param defaultValue
+ * @returns {U | V} - Return the predicate return type U if variable is assigned otherwise return type V
+ */
+export const ifAssigned = <T, U, V>(variable: T, predicate: (a: T) => U, defaultValue: V): U | V =>
+    isAssigned(variable) ? predicate(variable) : defaultValue;

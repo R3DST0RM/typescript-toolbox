@@ -1,4 +1,4 @@
-import { isArray, isAssigned, isNil, isString, isStringEmpty, isTrimmedStringEmpty } from "../index";
+import { ifAssigned, isArray, isAssigned, isNil, isString, isStringEmpty, isTrimmedStringEmpty } from "../index";
 
 describe("isNil", () => {
     it("returns true if variable is undefined", () => {
@@ -91,5 +91,13 @@ describe("isString", () => {
         ${""}           | ${true}
     `("returns $result when $values are used", ({ values, result }) => {
         expect(isString(values)).toEqual(result);
+    });
+});
+
+describe("ifAssigned", () => {
+    it("returns value from predicate function", () => {
+        expect(ifAssigned(1, () => "ab", 0)).toEqual("ab");
+        expect(ifAssigned(null, () => "ab", 0)).toEqual(0);
+        expect(ifAssigned(undefined, () => "ab", 0)).toEqual(0);
     });
 });

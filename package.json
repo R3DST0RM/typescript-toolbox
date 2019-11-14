@@ -1,6 +1,6 @@
 {
   "name": "typescript-toolbox",
-  "version": "0.4.4",
+  "version": "1.0.0",
   "description": "Everything your TypeScript project needs",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -25,7 +25,10 @@
     "util",
     "typing",
     "utility",
-    "javascript"
+    "javascript",
+    "functions",
+    "helper-methods",
+    "useful"
   ],
   "author": "Dominik Schwarzbauer",
   "license": "MIT",
