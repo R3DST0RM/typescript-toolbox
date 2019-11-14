@@ -19,6 +19,13 @@ export const add = (a: number, b: number): number => a + b;
 export const sub = (a: number, b: number): number => a - b;
 
 /**
+ * Multiplies all elements of a list.
+ * @param a - Number Array as input
+ * @returns Product of all values multiplied.
+ */
+export const product = (a: number[]) => a.reduce((acc, currentVal) => acc * currentVal, 1);
+
+/**
  * Return the same value that was used as argument.
  * @example
  * identity(5); // => 5

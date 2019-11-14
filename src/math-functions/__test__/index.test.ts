@@ -1,4 +1,4 @@
-import { add, identity, sub } from "../index";
+import { add, identity, product, sub } from "../index";
 
 describe("add / sub function", () => {
     it("adds number correctly", () => {
@@ -19,4 +19,17 @@ describe("identity function", () => {
         expect(identity(identValue)).toBe(identValue);
         expect(identity(identFunc)).toBe(identFunc);
     });
+});
+
+describe("product function", () => {
+    it.each`
+        inputArray              | expectedResult
+        ${[2, 4, 6, 8, 100, 1]} | ${38400}
+        ${[2, 4, 1, 7, 10, 5]}  | ${2800}
+    `(
+        "returns the product of any given number array",
+        ({ inputArray, expectedResult }: { inputArray: number[]; expectedResult: number }) => {
+            expect(product(inputArray)).toBe(expectedResult);
+        },
+    );
 });
