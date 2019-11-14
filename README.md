@@ -37,6 +37,10 @@ _If a property is in both object the latter version will win. Means, that `base`
 
 Checks whether a variable is `null` or `undefined` and returns `true`. This method is also making use of the TypeScript type guard to ensure type safety for the current scope.
 
+- ifAssigned (`<T, U, V>(variable: T, predicate: (a: T) => U, defaultValue: V): U | V`)
+
+Check if a variable is assigned, if it is, execute the predicate function and return it's value. Otherwise return the default value specified.
+
 - isAssigned (`<T>(a: T | null | undefined): a is T`)
 
 It's the inversion of `isNil` and returns `true` if the given variable has any value assigned. This function also makes use of TypeScript type guards.
