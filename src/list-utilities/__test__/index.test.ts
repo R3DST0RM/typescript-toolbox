@@ -1,4 +1,4 @@
-import { merge, mergeArray, mergeSet } from "../index";
+import { merge, mergeArray, mergeArrays, mergeSet } from "../index";
 
 describe("merge function", () => {
     it("merges two objects correctly", () => {
@@ -19,6 +19,21 @@ describe("mergeArray function", () => {
 
         expect(mergeArray(a, b)).toEqual([1, 2, 3, 3, 4, 5]);
         expect(mergeArray(c, d)).toEqual(["a", 1, 2, "b", 2, 3]);
+    });
+});
+
+describe("mergeArrays function", () => {
+    it("merges three arrays correctly", () => {
+        const a = [1, 2, 3];
+        const b = [3, 4, 5];
+        const c = ["a", 1, 2];
+
+        const d = ["b", 2, 3];
+        const e = ["c", 3, 4];
+        const f = ["d", 5, 6];
+
+        expect(mergeArrays(a, b, c)).toEqual([1, 2, 3, 3, 4, 5, "a", 1, 2]);
+        expect(mergeArrays(d, e, f)).toEqual(["b", 2, 3, "c", 3, 4, "d", 5, 6]);
     });
 });
 
