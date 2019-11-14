@@ -13,6 +13,12 @@ Merges two arrays together and returns a concatenated version.
 
 Hint: Merging two arrays does NOT remove duplicate values, use `mergeSet` instead.
 
+- ### mergeArrays (`<T extends any[], U extends any[]>(base: T, ...arrays: U): _InternalCombinedType<T[], U[]>`)
+
+Merges two or more arrays together and returns a concatenated version.
+
+Hint: Merging *n* arrays does NOT remove duplicate values.
+
 - ### mergeSet (`<T extends any[], U extends any[]>(base: T, toMerge: U)`)
 
 Merges two arrays together and returns a concatenated version. It also removes duplicate values.
