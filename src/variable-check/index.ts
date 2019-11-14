@@ -5,9 +5,20 @@ export const isStringEmpty = <T extends string>(a: T): a is T => isNil(a) || a.l
 /**
  * Checks if a variable is a string and not null or undefined
  * @param a - Generic type <T>
+ * @returns {boolean} - Whether or not the input parameter is a string
  */
 export function isString<T>(a: T | unknown | null | undefined): a is string {
     return isAssigned<typeof a>(a) && typeof a === "string";
+}
+
+/**
+ * Checks if a variable is an array and not null or undefined.
+ * This function is enhanced with a type guard to satisfy later type checks for the scope.
+ * @param a - Generic type <T>
+ * @returns {boolean} - Expressing whether or not the input parameter is an array
+ */
+export function isArray<T>(a: T[] | T | unknown | null | undefined): a is T[] {
+    return isAssigned<typeof a>(a) && Array.isArray(a);
 }
 
 /**

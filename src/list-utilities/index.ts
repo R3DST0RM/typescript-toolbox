@@ -30,9 +30,12 @@ export const mergeArray = <T extends any[], U extends any[]>(base: T, toMerge: U
  * @param arrays
  * @returns object - A new array where all input arrays are merged together
  */
-export const mergeArrays = <T extends any[], U extends any[]>(base: T, ...arrays: U): _InternalCombinedType<T[], U[]> => {
+export const mergeArrays = <T extends any[], U extends any[]>(
+    base: T,
+    ...arrays: U
+): _InternalCombinedType<T[], U[]> => {
     return [...base, ...arrays].reduce((acc, val) => acc.concat(val), []);
-}
+};
 
 /**
  * Merges two arrays together by removing duplicate values
