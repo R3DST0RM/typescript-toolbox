@@ -1,6 +1,6 @@
 # Typescript-Utils
 
-[![Build Status](https://travis-ci.org/R3DST0RM/typescript-utils.svg?branch=master)](https://travis-ci.org/R3DST0RM/typescript-utils)
+[![Build Status](https://travis-ci.org/R3DST0RM/typescript-toolbox.svg?branch=master)](https://travis-ci.org/R3DST0RM/typescript-toolbox)
 [![Coverage Status](https://coveralls.io/repos/github/R3DST0RM/typescript-utils/badge.svg?branch=master)](https://coveralls.io/github/R3DST0RM/typescript-utils?branch=master)
 
 Everything your TypeScript project needs. This library is a collection of helpful methods I came up with while developing software using TypeScript.
