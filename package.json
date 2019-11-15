@@ -1,6 +1,6 @@
 {
   "name": "typescript-toolbox",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Everything your TypeScript project needs",
   "main": "lib/index.js",
   "module": "lib/index.js",
@@ -17,6 +17,9 @@
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
   },
+  "files": [
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/R3DST0RM/typescript-utils.git"
