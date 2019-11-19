@@ -96,8 +96,8 @@ describe("isString", () => {
 
 describe("ifAssigned", () => {
     it("returns value from predicate function", () => {
-        expect(ifAssigned(1, () => "ab", 0)).toEqual("ab");
-        expect(ifAssigned(null, () => "ab", 0)).toEqual(0);
-        expect(ifAssigned(undefined, () => "ab", 0)).toEqual(0);
+        expect(ifAssigned(1, () => "ab", "0")).toEqual("ab");
+        expect(ifAssigned(null, () => "ab", "0")).toEqual("0");
+        expect(ifAssigned(undefined, () => "ab", "0")).toEqual("0");
     });
 });

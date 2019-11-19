@@ -111,6 +111,20 @@ const asyncFn = async () => {
 }
 ```
 
+## Helper Methods
+
+- doNothing `(...args: unknown[]) => void`
+
+This method does not do anything on purpose. It's used as a convenient method do express that nothing should or will be done at a particular case.
+
+E.g. (constructed example) 
+```typescript
+import {doNothing } from "typescript-toolbox";
+
+const bla = Math.random();
+const x = bla > 5 ? doNothing : 5;
+```
+
 # Browser Support
 
 We care about browser support. Therefore this library has support for Internet Explorer 11
