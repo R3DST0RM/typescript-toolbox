@@ -1,4 +1,4 @@
-import { Optional } from "../optional";
+import {Optional} from "../optional";
 
 describe("Optional", () => {
     it("orElse on an empty optional returns specified default value", () => {
@@ -34,5 +34,33 @@ describe("Optional", () => {
 
         expect(emptyOptional.orElseGet(() => 1)).toBe(1);
         expect(nonEmptyOptional.orElseGet(() => 0)).toBe(5);
+    });
+
+    it("map on empty optional returns an empty optional", () => {
+        const emptyOptional = Optional.empty<null>();
+        const mappedOptional = emptyOptional.map(val => 2);
+
+        expect(mappedOptional.orElse("was empty")).toBe("was empty");
+    });
+
+    it("map on non empty optional returns mapped value", () => {
+        const nonEmptyOptional = Optional.of(5);
+        const mappedNonEmptyOptional = nonEmptyOptional.map(val => val * 2);
+
+        expect(mappedNonEmptyOptional.orElse(undefined)).toBe(10);
+    });
+
+    it("flatMap on empty optional returns an empty optional", () => {
+        const emptyOptional = Optional.empty<null>();
+        const mappedOptional = emptyOptional.flatMap(val => null);
+
+        expect(mappedOptional.orElse("was empty")).toBe("was empty");
+    });
+
+    it("map on non empty optional returns mapped value", () => {
+        const nonEmptyOptional = Optional.of(5);
+        const mappedNonEmptyOptional = nonEmptyOptional.flatMap(val => val * 2);
+
+        expect(mappedNonEmptyOptional.orElse(undefined)).toBe(10);
     });
 });

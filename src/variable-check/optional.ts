@@ -1,4 +1,4 @@
-import { isAssigned, isNil } from "./index";
+import {isAssigned, isNil} from "./index";
 
 export class Optional<T> {
     public static empty<T>(): Optional<T> {
@@ -30,7 +30,7 @@ export class Optional<T> {
         return isNil(this.prop) ? Optional.empty<Y>() : Optional.of<Y>(toMap(this.prop));
     }
 
-    public flatMap<Y>(toMap: (wrapped: T) => Optional<Y>): Optional<Y> {
-        return isNil(this.prop) ? Optional.empty<Y>() : toMap(this.prop);
+    public flatMap<Y>(toMap: (wrapped: T) => Y): Optional<Y> {
+        return isNil(this.prop) ? Optional.empty<Y>() : Optional.ofNullable(toMap(this.prop));
     }
 }
