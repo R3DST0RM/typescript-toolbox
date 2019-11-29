@@ -63,4 +63,12 @@ describe("Optional", () => {
 
         expect(mappedNonEmptyOptional.orElse(undefined)).toBe(10);
     });
+
+    it("isPresent returns true if value is present otherwise false", () => {
+        const nonEmptyOptional = Optional.of(5);
+        const emptyOptional = Optional.empty();
+
+        expect(nonEmptyOptional.isPresent()).toBeTruthy();
+        expect(emptyOptional.isPresent()).toBeFalsy();
+    });
 });

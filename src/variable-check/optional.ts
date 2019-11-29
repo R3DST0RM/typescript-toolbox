@@ -33,4 +33,8 @@ export class Optional<T> {
     public flatMap<Y>(toMap: (wrapped: T) => Y): Optional<Y> {
         return isNil(this.prop) ? Optional.empty<Y>() : Optional.ofNullable(toMap(this.prop));
     }
+
+    public isPresent(): boolean {
+        return isAssigned(this.prop);
+    }
 }
