@@ -1,4 +1,5 @@
 import {isAssigned, isNil} from "./index";
+import { Predicate } from "./predicate";
 
 export class Optional<T> {
     public static empty<T>(): Optional<T> {
@@ -43,6 +44,6 @@ export class Optional<T> {
             return this;
         }
         
-        return predicate.test(this.prop) ? this : Optional.empty<Y>();
+        return predicate.test(this.prop!) ? this : Optional.empty<Y>();
     }
 }
