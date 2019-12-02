@@ -71,4 +71,13 @@ describe("Optional", () => {
         expect(nonEmptyOptional.isPresent()).toBeTruthy();
         expect(emptyOptional.isPresent()).toBeFalsy();
     });
+    
+    it("calling filter, returns filtered value", () => {
+        const metroYear: Optional<number> = Optional.of(2033);
+        boolean isMetroYear2033 = metroYear.filter<number>(Predicate.of<number>(y => y === 2033)).isPresent();
+        boolean isMetroYear2019 = metroYear.filter<number>(Predicate.of<number>(y => y === 2019)).isPresent();
+
+        expect(isMetroYear2033).toBeTruthy();
+        expect(isMetroYear2019).toBeFalsy();
+    });
 });
