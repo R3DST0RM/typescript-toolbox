@@ -1,4 +1,5 @@
 import {Optional} from "../optional";
+import { Predicate } from "../predicate";
 
 describe("Optional", () => {
     it("orElse on an empty optional returns specified default value", () => {
@@ -74,8 +75,8 @@ describe("Optional", () => {
     
     it("calling filter, returns filtered value", () => {
         const metroYear: Optional<number> = Optional.of(2033);
-        boolean isMetroYear2033 = metroYear.filter<number>(Predicate.of<number>(y => y === 2033)).isPresent();
-        boolean isMetroYear2019 = metroYear.filter<number>(Predicate.of<number>(y => y === 2019)).isPresent();
+        const isMetroYear2033: boolean = metroYear.filter<number>(Predicate.of<number>(y => y === 2033)).isPresent();
+        const isMetroYear2019: boolean = metroYear.filter<number>(Predicate.of<number>(y => y === 2019)).isPresent();
 
         expect(isMetroYear2033).toBeTruthy();
         expect(isMetroYear2019).toBeFalsy();
