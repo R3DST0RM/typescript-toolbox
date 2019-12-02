@@ -37,4 +37,12 @@ export class Optional<T> {
     public isPresent(): boolean {
         return isAssigned(this.prop);
     }
+    
+    public filter<Y>(predicate: Predicate<T>) {
+        if (!this.isPresent()) {
+            return this;
+        }
+        
+        return predicate.test(this.prop) ? this : Optional.empty<Y>();
+    }
 }
