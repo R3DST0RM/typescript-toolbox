@@ -1,4 +1,4 @@
-# Typescript-Utils
+# Typescript-Toolbox
 
 [![GitHub issues](https://img.shields.io/github/issues/R3DST0RM/typescript-toolbox)](https://github.com/R3DST0RM/typescript-toolbox/issues)
 [![GitHub release](https://img.shields.io/github/v/release/R3DST0RM/typescript-toolbox.svg)](https://github.com/R3DST0RM/typescript-toolbox/releases)
@@ -9,19 +9,19 @@ Everything your TypeScript project needs. This library is a collection of helpfu
 
 ## Array utils
 
--  mergeArray (`<T extends any[], U extends any[]>(base: T, toMerge: U): _InternalCombinedType<T[], U[]>`)
+-  mergeArray `<T extends any[], U extends any[]>(base: T, toMerge: U): _InternalCombinedType<T[], U[]>`
 
 Merges two arrays together and returns a concatenated version.
 
 Hint: Merging two arrays does NOT remove duplicate values, use `mergeSet` instead.
 
--  mergeArrays (`<T extends any[], U extends any[]>(base: T, ...arrays: U): _InternalCombinedType<T[], U[]>`)
+-  mergeArrays `<T extends any[], U extends any[]>(base: T, ...arrays: U): _InternalCombinedType<T[], U[]>`
 
 Merges two or more arrays together and returns a concatenated version.
 
 Hint: Merging *n* arrays does NOT remove duplicate values.
 
--  mergeSet (`<T extends any[], U extends any[]>(base: T, toMerge: U)`)
+-  mergeSet `<T extends any[], U extends any[]>(base: T, toMerge: U)`
 
 Merges two arrays together and returns a concatenated version. It also removes duplicate values.
 
