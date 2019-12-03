@@ -81,4 +81,11 @@ describe("Optional", () => {
         expect(isMetroYear2033).toBeTruthy();
         expect(isMetroYear2019).toBeFalsy();
     });
+    
+    it("returns itself if optional is empty and filter gets called", () => {
+        const emptyOptional: Optional<null> = Optional.empty();
+        const filteredOptional: Optional<null> = emptyOptional.filter(Predicate.of(() => true));
+
+        expect(filteredOptional).toBe(emptyOptional);
+    });
 });
