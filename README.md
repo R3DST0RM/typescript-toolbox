@@ -3,7 +3,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/R3DST0RM/typescript-toolbox)](https://github.com/R3DST0RM/typescript-toolbox/issues)
 [![GitHub release](https://img.shields.io/github/v/release/R3DST0RM/typescript-toolbox.svg)](https://github.com/R3DST0RM/typescript-toolbox/releases)
 [![Build Status](https://travis-ci.org/R3DST0RM/typescript-toolbox.svg?branch=master)](https://travis-ci.org/R3DST0RM/typescript-toolbox)
-[![Coverage Status](https://coveralls.io/repos/github/R3DST0RM/typescript-utils/badge.svg?branch=master)](https://coveralls.io/github/R3DST0RM/typescript-utils?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/R3DST0RM/typescript-toolbox/badge.svg?branch=master)](https://coveralls.io/github/R3DST0RM/typescript-toolbox?branch=master)
 
 Everything your TypeScript project needs. This library is a collection of helpful methods I came up with while developing software using TypeScript.
 
