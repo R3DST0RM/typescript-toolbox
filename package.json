@@ -1,6 +1,6 @@
 {
   "name": "typescript-toolbox",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Everything your TypeScript project needs",
   "main": "lib/index.js",
   "module": "lib/index.js",
