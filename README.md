@@ -7,6 +7,27 @@
 
 Everything your TypeScript project needs. This library is a collection of helpful methods I came up with while developing software using TypeScript.
 
+## Optional
+
+*Added in v1.2.0*: `Optional` inspired by Java 8 implementation of Optional.
+
+Utility class to abstract the handling of possibly `null` or `undefined` values.
+
+For a detailed documentation with samples, please see [Optional docs](https://github.com/R3DST0RM/typescript-toolbox/wiki/Optional)
+
+## Predicate
+
+*Added in v1.2.0*: `Predicate` inspired by the Java Standard implementation of Predicate.
+
+Utility class to abstract boolean expressions and `test()` for the result.
+
+For a detailed documentation with samples, please see: [Predicate docs](https://github.com/R3DST0RM/typescript-toolbox/wiki/Predicate)
+
+---
+
+## Available utils (before v1.2.0)
+
+
 ## Array utils
 
 -  mergeArray `<T extends any[], U extends any[]>(base: T, toMerge: U): _InternalCombinedType<T[], U[]>`
