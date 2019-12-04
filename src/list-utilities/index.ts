@@ -1,3 +1,5 @@
+import { Predicate } from "../variable-check/predicate";
+
 export type OptionalRecord<K extends string | number, T> = { [P in K]: T | undefined };
 
 type _InternalCombinedType<T, U> = T & U;
@@ -46,3 +48,12 @@ export const mergeArrays = <T extends any[], U extends any[]>(
 export const mergeSet = <T extends any[], U extends any[]>(base: T, toMerge: U) => {
     return Array.from(new Set(mergeArray(base, toMerge)));
 };
+
+/**
+ * Filters an {@link Array} using a given {@link Predicate} function. And return that result.
+ * @param array - T
+ * @param predicate - Predicate
+ */
+export const filter = <T>(array: T[], predicate: Predicate<T>): T[] => {
+    return array.filter(value => predicate.test(value));
+}
