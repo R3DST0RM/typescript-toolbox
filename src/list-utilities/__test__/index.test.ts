@@ -1,4 +1,5 @@
-import { merge, mergeArray, mergeArrays, mergeSet } from "../index";
+import { Predicate } from "../../variable-check/predicate";
+import { filter, merge, mergeArray, mergeArrays, mergeSet } from "../index";
 
 describe("merge function", () => {
     it("merges two objects correctly", () => {
@@ -48,4 +49,13 @@ describe("mergeSet function", () => {
         expect(mergeSet(a, b)).toEqual([1, 2, 3, 4, 5]);
         expect(mergeSet(c, d)).toEqual(["a", 1, 2, "b", 3]);
     });
+});
+
+describe("filter function", () => {
+   it("filters an array using a Predicate", () => {
+       const a = [1, 2, 3];
+       const predicate = Predicate.of<number>(val => val >= 2);
+
+       expect(filter(a, predicate)).toEqual([1, 2]);
+   });
 });
