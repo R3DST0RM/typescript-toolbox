@@ -56,6 +56,6 @@ describe("filter function", () => {
        const a = [1, 2, 3];
        const predicate = Predicate.of<number>(val => val >= 2);
 
-       expect(filter(a, predicate)).toEqual([1, 2]);
+       expect(filter(a, predicate)).toEqual([2, 3]);
    });
 });
