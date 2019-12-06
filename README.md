@@ -27,24 +27,13 @@ For a detailed documentation with samples, please see: [Predicate docs](https://
 
 ## Available utils (before v1.2.0)
 
-
 ## Array utils
 
--  mergeArray `<T extends any[], U extends any[]>(base: T, toMerge: U): _InternalCombinedType<T[], U[]>`
+*Added in 0.1.0*: `Array utils` is a collection of useful array methods.
 
-Merges two arrays together and returns a concatenated version.
+It consists of: `mergeArray`, `mergeArrays`, `mergeSet`.
 
-Hint: Merging two arrays does NOT remove duplicate values, use `mergeSet` instead.
-
--  mergeArrays `<T extends any[], U extends any[]>(base: T, ...arrays: U): _InternalCombinedType<T[], U[]>`
-
-Merges two or more arrays together and returns a concatenated version.
-
-Hint: Merging *n* arrays does NOT remove duplicate values.
-
--  mergeSet `<T extends any[], U extends any[]>(base: T, toMerge: U)`
-
-Merges two arrays together and returns a concatenated version. It also removes duplicate values.
+For a detailed documentation with samples, please see: [Array utils docs](https://github.com/R3DST0RM/typescript-toolbox/wiki/Array-utils)
 
 ## Object utils
 
