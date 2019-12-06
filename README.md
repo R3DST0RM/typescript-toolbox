@@ -23,10 +23,6 @@ Utility class to abstract boolean expressions and `test()` for the result.
 
 For a detailed documentation with samples, please see: [Predicate docs](https://github.com/R3DST0RM/typescript-toolbox/wiki/Predicate)
 
----
-
-## Available utils (before v1.2.0)
-
 ## Array utils
 
 *Added in 0.1.0*: `Array utils` is a collection of useful array methods.
@@ -37,11 +33,15 @@ For a detailed documentation with samples, please see: [Array utils docs](https:
 
 ## Object utils
 
--  merge (`<T extends object, U extends object>(base: T, toMerge: U): _InternalCombinedType<T, U>`)
+*Added in 0.1.0*: `Object utils` is a collection of useful object methods.
 
-Merges two objects together and returns a concatenated version.
+It consists of: `merge`.
 
-_If a property is in both object the latter version will win. Means, that `base` value will be overridden by `toMerge` object_
+For a detailed documentation with samples, please see: [Object utils docs](https://github.com/R3DST0RM/typescript-toolbox/wiki/Object-utils)
+
+---
+
+## Available utils (before v1.2.0)
 
 ## Variable Checks
 
