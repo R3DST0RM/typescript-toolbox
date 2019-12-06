@@ -39,31 +39,17 @@ It consists of: `merge`.
 
 For a detailed documentation with samples, please see: [Object utils docs](https://github.com/R3DST0RM/typescript-toolbox/wiki/Object-utils)
 
+## Variable utils
+
+*Added in 0.1.0*: `Variable utils` is a collection of useful methods for checking on variables.
+
+It consists of: `isString`, `isArray`, `isNil`, `isAssigned`, `ifAssigned`.
+
+For a detailed documentation with samples, please see: [Variable utils docs](https://github.com/R3DST0RM/typescript-toolbox/wiki/Variable-utils)
+
 ---
 
 ## Available utils (before v1.2.0)
-
-## Variable Checks
-
-- isNil (`<T>(a: T | null | undefined): a is null | undefined`)
-
-Checks whether a variable is `null` or `undefined` and returns `true`. This method is also making use of the TypeScript type guard to ensure type safety for the current scope.
-
-- ifAssigned (`<T, U, V>(variable: T, predicate: (a: T) => U, defaultValue: V): U | V`)
-
-Check if a variable is assigned, if it is, execute the predicate function and return it's value. Otherwise return the default value specified.
-
-- isAssigned (`<T>(a: T | null | undefined): a is T`)
-
-It's the inversion of `isNil` and returns `true` if the given variable has any value assigned. This function also makes use of TypeScript type guards.
-
-- isString (`<T>(a: T | unknown | null | undefined): a is string`)
-
-Checks a given parameter if it is a string and returns a type guard ensuring, that it's either a string or not.
-
-- isArray (`<T>(a: T[] | T | unknown | null | undefined): a is T[]`)
-
-Checks a given parameter if it is an array and returns a type guard ensuring, that it's either an array or not.
 
 ## Typings
 
