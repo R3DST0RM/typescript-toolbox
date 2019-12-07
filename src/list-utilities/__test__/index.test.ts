@@ -52,10 +52,10 @@ describe("mergeSet function", () => {
 });
 
 describe("filter function", () => {
-   it("filters an array using a Predicate", () => {
-       const a = [1, 2, 3];
-       const predicate = Predicate.of<number>(val => val >= 2);
+    it("filters an array using a Predicate", () => {
+        const a = [1, 2, 3];
+        const predicate = Predicate.of<number>(val => val >= 2);
 
-       expect(filter(a, predicate)).toEqual([2, 3]);
-   });
+        expect(filter(a, predicate)).toEqual([2, 3]);
+    });
 });

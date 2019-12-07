@@ -2,6 +2,7 @@ import { Predicate } from "../variable-check/predicate";
 
 export type OptionalRecord<K extends string | number, T> = { [P in K]: T | undefined };
 export type OptionalNullRecord<K extends string | number, T> = { [P in K]: T | undefined | null };
+export type EnforceProp<Prop, ExpectedProp, ErrorProp> = Exclude<keyof Prop, keyof ExpectedProp> extends never ? {} : ErrorProp;
 
 type _InternalCombinedType<T, U> = T & U;
 
@@ -57,4 +58,4 @@ export const mergeSet = <T extends any[], U extends any[]>(base: T, toMerge: U) 
  */
 export const filter = <T>(array: T[], predicate: Predicate<T>): T[] => {
     return array.filter(value => predicate.test(value));
-}
+};

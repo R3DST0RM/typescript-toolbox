@@ -14,7 +14,7 @@ describe("Predicate.ts", () => {
     });
 
     it("negating the predicate, negates the result", () => {
-       expect(isGreaterThanFive.negate().test(4)).toBeTruthy();
+        expect(isGreaterThanFive.negate().test(4)).toBeTruthy();
     });
 
     it("concatenating (and) two predicates return a valid result", () => {

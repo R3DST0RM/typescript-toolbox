@@ -1,9 +1,9 @@
-import {isAssigned, isNil} from "./index";
+import { isAssigned, isNil } from "./index";
 import { Predicate } from "./predicate";
 
 export class Optional<T> {
     public static empty<T>(): Optional<T> {
-        return new Optional<T>(null)
+        return new Optional<T>(null);
     }
 
     public static ofNullable<T>(value: T | null | undefined): Optional<T> {
@@ -38,12 +38,12 @@ export class Optional<T> {
     public isPresent(): boolean {
         return isAssigned(this.prop);
     }
-    
+
     public filter<Y>(predicate: Predicate<T>) {
         if (!this.isPresent()) {
             return this;
         }
-        
+
         return predicate.test(this.prop!) ? this : Optional.empty<Y>();
     }
 }

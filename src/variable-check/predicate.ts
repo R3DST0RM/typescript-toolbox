@@ -1,9 +1,9 @@
 export abstract class Predicate<T> {
     public static of<S>(x: (prop: S) => boolean): Predicate<S> {
         // tslint:disable-next-line:max-classes-per-file
-        return new class extends Predicate<S> {
+        return new (class extends Predicate<S> {
             public predicate = x;
-        }
+        })();
     }
 
     protected abstract predicate: (prop: T) => boolean;

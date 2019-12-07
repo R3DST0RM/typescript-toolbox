@@ -1,5 +1,5 @@
 import { doNothing } from "./helper-methods";
-import { filter, merge, mergeArray, mergeArrays, mergeSet, OptionalRecord, OptionalNullRecord } from "./list-utilities";
+import { EnforceProp, filter, merge, mergeArray, mergeArrays, mergeSet, OptionalNullRecord, OptionalRecord } from "./list-utilities";
 import { add, identity, product, sub } from "./math-functions";
 import { waitFor } from "./timeout-utils/waitFor";
 import {
@@ -14,6 +14,7 @@ import {
 
 export {
     doNothing,
+    EnforceProp,
     identity,
     ifAssigned,
     isArray,
