@@ -5,7 +5,11 @@
 [![Build Status](https://travis-ci.org/R3DST0RM/typescript-toolbox.svg?branch=master)](https://travis-ci.org/R3DST0RM/typescript-toolbox)
 [![Coverage Status](https://coveralls.io/repos/github/R3DST0RM/typescript-toolbox/badge.svg?branch=master)](https://coveralls.io/github/R3DST0RM/typescript-toolbox?branch=master)
 
-Everything your TypeScript project needs. This library is a collection of helpful methods I came up with while developing software using TypeScript.
+Typescript-Toolbox is a collection of everything that your TypeScript project needs.
+It consists of a bunch of helpful method and classes, which make your life easier while developing a project using TypeScript.
+
+Including classes like: `Optional` and `Predicate`, which are well known to Java developers.
+Also there are a bunch of nice typing utilities, to correctly type your project. Those types ensure, you do not run out of type safety.
 
 ## Optional
 
@@ -23,134 +27,61 @@ Utility class to abstract boolean expressions and `test()` for the result.
 
 For a detailed documentation with samples, please see: [Predicate docs](https://github.com/R3DST0RM/typescript-toolbox/wiki/Predicate)
 
----
-
-## Available utils (before v1.2.0)
-
-
 ## Array utils
 
--  mergeArray `<T extends any[], U extends any[]>(base: T, toMerge: U): _InternalCombinedType<T[], U[]>`
+*Added in 0.1.0*: `Array utils` is a collection of useful array methods.
 
-Merges two arrays together and returns a concatenated version.
+It consists of: `mergeArray`, `mergeArrays`, `mergeSet`.
 
-Hint: Merging two arrays does NOT remove duplicate values, use `mergeSet` instead.
-
--  mergeArrays `<T extends any[], U extends any[]>(base: T, ...arrays: U): _InternalCombinedType<T[], U[]>`
-
-Merges two or more arrays together and returns a concatenated version.
-
-Hint: Merging *n* arrays does NOT remove duplicate values.
-
--  mergeSet `<T extends any[], U extends any[]>(base: T, toMerge: U)`
-
-Merges two arrays together and returns a concatenated version. It also removes duplicate values.
+For a detailed documentation with samples, please see: [Array utils docs](https://github.com/R3DST0RM/typescript-toolbox/wiki/Array-utils)
 
 ## Object utils
 
--  merge (`<T extends object, U extends object>(base: T, toMerge: U): _InternalCombinedType<T, U>`)
+*Added in 0.1.0*: `Object utils` is a collection of useful object methods.
 
-Merges two objects together and returns a concatenated version.
+It consists of: `merge`.
 
-_If a property is in both object the latter version will win. Means, that `base` value will be overridden by `toMerge` object_
+For a detailed documentation with samples, please see: [Object utils docs](https://github.com/R3DST0RM/typescript-toolbox/wiki/Object-utils)
 
-## Variable Checks
+## Variable utils
 
-- isNil (`<T>(a: T | null | undefined): a is null | undefined`)
+*Added in 0.1.0*: `Variable utils` is a collection of useful methods for checking on variables.
 
-Checks whether a variable is `null` or `undefined` and returns `true`. This method is also making use of the TypeScript type guard to ensure type safety for the current scope.
+It consists of: `isString`, `isArray`, `isNil`, `isAssigned`, `ifAssigned`.
 
-- ifAssigned (`<T, U, V>(variable: T, predicate: (a: T) => U, defaultValue: V): U | V`)
-
-Check if a variable is assigned, if it is, execute the predicate function and return it's value. Otherwise return the default value specified.
-
-- isAssigned (`<T>(a: T | null | undefined): a is T`)
-
-It's the inversion of `isNil` and returns `true` if the given variable has any value assigned. This function also makes use of TypeScript type guards.
-
-- isString (`<T>(a: T | unknown | null | undefined): a is string`)
-
-Checks a given parameter if it is a string and returns a type guard ensuring, that it's either a string or not.
-
-- isArray (`<T>(a: T[] | T | unknown | null | undefined): a is T[]`)
-
-Checks a given parameter if it is an array and returns a type guard ensuring, that it's either an array or not.
+For a detailed documentation with samples, please see: [Variable utils docs](https://github.com/R3DST0RM/typescript-toolbox/wiki/Variable-utils)
 
 ## Typings
 
-- OptionalRecord `type OptionalRecord<K extends string | number, T>`
+*Added in 0.1.0*: `Typings` contain a bunch of useful types.
 
-A type for correctly typing a list with a value of `T` and `undefined`. This type should avoid write the following:
+It consists of: `OptionalRecord`, `OptionalNullRecord`.
 
-```typescript
-// The old way
-const a: Record<string, number | undefined> = { a: 5, b: undefined };
+For a detailed documentation with samples, please see: [Typings docs](https://github.com/R3DST0RM/typescript-toolbox/wiki/Typings)
 
-// Instead it's now
-const b: OptionalRecord<string, number> = { a: 5, b: undefined };
-```
+## String utils
 
-## String utility methods
+*Added in 0.1.0*: `String utils` is a collection of useful methods for checking a `string` variable.
 
--  isStringEmpty (`<T extends string>(a: T): a is T`)
+It consists of: `isStringEmpty`, `isTrimmedStringEmpty`.
 
-This function is a convenience method for checking whether a string is empty or has some value.
+For a detailed documentation with samples, please see: [String utils docs](https://github.com/R3DST0RM/typescript-toolbox/wiki/String-utils)
 
-It returns `true` for `""` otherwise `false`
+## Math utils
 
--  isTrimmedStringEmpty (`<T extends string>(a: T): a is T`)
+*Added in 0.1.0*: `Math utils` is a collection of some mathematical functions.
 
-Is another convenience method, that checks whether or not a string is empty, after running the `trim()` function on it.
+For a detailed documentation with samples, please see: [Math utils docs](https://github.com/R3DST0RM/typescript-toolbox/wiki/Math-utils)
 
-## Math Functions
+## Helper methods
 
--  add (`a: number, b: number`)
+*Added in 0.1.0*: `Helper methods` is collection of some helpful methods which can be used for convenience.
 
-This function adds a to b. E.g. `add(1, 1) // => 2`. Simple addition we know from school.
-
--  sub (`a: number, b: number`)
-
-This function subtracts b from a. E.g. `sub(1, 2) // => -1`. Simple subtraction we know from school.
-
--  product (`a: number[]`)
-
-Calculates the product of the given number array and returns a single number.
-
--  identity `<T>(x: T): T`
-
-Returns the same value that was used as it's argument.
-
-## Async Functions
-
--  waitFor (`<T>(validatorInput: T, validatorFn: ValidatorFunction<T>, waitOptions: WaitOptions)`)
-
-This function waits until the validator function returns `true` or until the timeout is reached (default timeout: 5 seconds).
-Example usage:
-
-```typescript
-const asyncFn = async () => {
-    await waitFor(doSomeCalculation(), resultOfdoSomeCalculation => resultOfdoSomeCalculation === 5);
-    // code which get's executed as soon as resultOfdoSomeCalculation is equal to 5 otherwise the Promise will get rejected after 5 seconds
-}
-```
-
-## Helper Methods
-
-- doNothing `(...args: unknown[]) => void`
-
-This method does not do anything on purpose. It's used as a convenient method do express that nothing should or will be done at a particular case.
-
-E.g. (constructed example) 
-```typescript
-import {doNothing } from "typescript-toolbox";
-
-const bla = Math.random();
-const x = bla > 5 ? doNothing : 5;
-```
+For a detailed documentation with samples, please see: [Helper methods](https://github.com/R3DST0RM/typescript-toolbox/wiki/Helper-methods)
 
 # Browser Support
 
-We care about browser support. Therefore this library has support for Internet Explorer 11
+Cross-browser support is very important. Therefore this library has even support for Internet Explorer 11.
 
 ![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png) | ![Edge](https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png) |
 --- | --- | --- | --- | --- | --- |
@@ -168,4 +99,5 @@ This library is licensed under the MIT license.
 
 # Contribute
 
-Feels free to submit your PR. I'd be more than glad if you extend this neat library of useful utility methods.
+Feel free to submit your PR, to help this library grow.
+The more helpful methods this library bundles the more it helps developing TypeScript projects.
