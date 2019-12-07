@@ -1,6 +1,7 @@
 import { Predicate } from "../variable-check/predicate";
 
 export type OptionalRecord<K extends string | number, T> = { [P in K]: T | undefined };
+export type OptionalNullRecord<K extends string | number, T> = { [P in K]: T | undefined | null };
 
 type _InternalCombinedType<T, U> = T & U;
 

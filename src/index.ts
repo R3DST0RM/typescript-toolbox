@@ -1,5 +1,5 @@
 import { doNothing } from "./helper-methods";
-import { filter, merge, mergeArray, mergeArrays, mergeSet, OptionalRecord } from "./list-utilities";
+import { filter, merge, mergeArray, mergeArrays, mergeSet, OptionalRecord, OptionalNullRecord } from "./list-utilities";
 import { add, identity, product, sub } from "./math-functions";
 import { waitFor } from "./timeout-utils/waitFor";
 import {
@@ -23,6 +23,7 @@ export {
     isString,
     isTrimmedStringEmpty,
     OptionalRecord,
+    OptionalNullRecord,
     add,
     sub,
     waitFor,
