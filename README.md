@@ -11,6 +11,20 @@ It consists of a bunch of helpful method and classes, which make your life easie
 Including classes like: `Optional` and `Predicate`, which are well known to Java developers.
 Also there are a bunch of nice typing utilities, to correctly type your project. Those types ensure, you do not run out of type safety.
 
+# Installation
+
+Typescript-Toolbox is available as [npm package](https://www.npmjs.com/package/typescript-toolbox).
+
+```
+// Installation using NPM
+npm install typescript-toolbox
+
+// Installation using YARN
+yarn add typescript-toolbox
+```
+
+# Available Tools / API
+
 ## Optional
 
 *Added in v1.2.0*: `Optional` inspired by Java 8 implementation of Optional.
