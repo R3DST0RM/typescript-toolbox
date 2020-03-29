@@ -52,5 +52,5 @@ export const isAssigned = <T>(a: T | null | undefined): a is T => !isNil(a);
  * @param defaultValue
  * @returns {U} - Returns the return type of the predicate (U).
  */
-export const ifAssigned = <T, U>(variable: T | undefined, predicate: (a: T) => U, defaultValue: U): U =>
+export const ifAssigned = <T, U>(variable: T | undefined | null, predicate: (a: T) => U, defaultValue: U): U =>
     isAssigned(variable) ? predicate(variable) : defaultValue;
